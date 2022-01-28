@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        {{task}}
+        <h1>Tâches</h1>
+
+        <input type="text" v-model="taskName" @keyup.enter=" addTask ">
+        <ul>
+            <li v-for="task in tasks " :key="task.id "> {{task.name}} <button v-on:click="deleteTask(task.id)">Supprimer</button></li>
+        </ul>
+    </div>
+</body>
+<script src="tache.js "></script>
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+    
+    #app {
+        font-family: "avenir ", Arial, Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: rgb(17, 16, 14);
+        margin-top: 60px;
+        align-items: center;
+        background-color: bisque;
+    }
+    
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    li {
+        list-style: none;
+    }
+</style>
+
+</html>
